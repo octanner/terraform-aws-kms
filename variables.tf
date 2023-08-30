@@ -74,6 +74,11 @@ variable "multi_region" {
   default     = false
 }
 
+variable "custom_key_store_id" {
+  description = "Id of custom key store, i.e. AWS CloudHSM"
+  type        = string
+}
+
 variable "policy" {
   description = "A valid policy JSON document. Although this is a key policy, not an IAM policy, an `aws_iam_policy_document`, in the form that designates a principal, can be used"
   type        = string
