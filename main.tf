@@ -17,10 +17,7 @@ resource "aws_kms_key" "this" {
   key_usage                          = var.key_usage
   multi_region                       = var.multi_region
   policy                             = coalesce(var.policy, data.aws_iam_policy_document.this[0].json)
-  dynamic "statement" {
-    for_each = length(var.custom_key_store_id) ? [1] : []
-    custom_key_store_id              = var.custom_key_store_id
-  }
+  custom_key_store_id                = var.custom_key_store_id
 
   tags = var.tags
 }
