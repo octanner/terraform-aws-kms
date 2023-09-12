@@ -17,6 +17,7 @@ resource "aws_kms_key" "this" {
   key_usage                          = var.key_usage
   multi_region                       = var.multi_region
   policy                             = coalesce(var.policy, data.aws_iam_policy_document.this[0].json)
+  custom_key_store_id                = var.custom_key_store_id
 
   tags = var.tags
 }
