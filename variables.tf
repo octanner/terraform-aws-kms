@@ -77,7 +77,7 @@ variable "multi_region" {
 variable "custom_key_store_id" {
   description = "Id of custom key store, i.e. AWS CloudHSM"
   type        = string
-  default     = ""
+  default     = null
 }
 
 variable "policy" {
